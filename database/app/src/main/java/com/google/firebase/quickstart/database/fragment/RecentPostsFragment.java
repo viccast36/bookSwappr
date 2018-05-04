@@ -28,6 +28,9 @@ public class RecentPostsFragment extends PostListFragment {
 
     private EditText searchBox;
     private FloatingActionButton mSubmitButton;
+    private String authorInput;
+
+
 
     public RecentPostsFragment() {}
 
@@ -35,12 +38,16 @@ public class RecentPostsFragment extends PostListFragment {
     public Query getQuery(DatabaseReference databaseReference) {
         // [START recent_posts_query]
         // Last 100 posts, these are automatically the 100 most recent
-        // due to sorting by push() keys
-        Query recentPostsQuery = databaseReference.child("posts").limitToFirst(100);
-        mSubmitButton = findViewById(R.id.button3);
+        // due to sorting by push() key
+
+        mSubmitButton.setOnClickListener(new View.OnClickListener() {
+
+        }
+        final String search = searchBox.getText().toString();
+        Query authorSearch = databaseReference.orderByChild("posts").equalTo(authorInput);
 
         // [END recent_posts_query]
 
-        return recentPostsQuery;
+        return authorSearch;
     }
 }
