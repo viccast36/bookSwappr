@@ -40,12 +40,7 @@ public class RecentPostsFragment extends PostListFragment {
         // Last 100 posts, these are automatically the 100 most recent
         // due to sorting by push() key
 
-        mSubmitButton.setOnClickListener(new View.OnClickListener() {
-
-        }
-        final String search = searchBox.getText().toString();
-        Query authorSearch = databaseReference.orderByChild("posts").equalTo(authorInput);
-
+        Query authorSearch = databaseReference.child("posts").limitToFirst(100);
         // [END recent_posts_query]
 
         return authorSearch;

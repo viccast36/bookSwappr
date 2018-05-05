@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -37,9 +38,9 @@ public abstract class PostListFragment extends Fragment {
     private FirebaseRecyclerAdapter<Post, PostViewHolder> mAdapter;
     private RecyclerView mRecycler;
     private LinearLayoutManager mManager;
-    public FloatingActionButton mSubmitButton;
 
     public PostListFragment() {}
+
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container,
@@ -50,6 +51,7 @@ public abstract class PostListFragment extends Fragment {
         // [START create_database_reference]
         mDatabase = FirebaseDatabase.getInstance().getReference();
         // [END create_database_reference]
+
 
         mRecycler = rootView.findViewById(R.id.messages_list);
         mRecycler.setHasFixedSize(true);
@@ -66,7 +68,6 @@ public abstract class PostListFragment extends Fragment {
         mManager.setReverseLayout(true);
         mManager.setStackFromEnd(true);
         mRecycler.setLayoutManager(mManager);
-        mSubmitButton.findViewById(R.id.button3);
 
         // Set up FirebaseRecyclerAdapter with the Query
         Query postsQuery = getQuery(mDatabase);

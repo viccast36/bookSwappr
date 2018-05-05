@@ -13,11 +13,36 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:hint="Title"
+        android:hint="Book Title"
         android:maxLines="1" />
 
     <EditText
         android:id="@+id/field_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/field_isbn"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:hint="Description of Posting/Book"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:scrollHorizontally="false" />
+
+    <EditText
+        android:id="@+id/field_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/field_book_author"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:hint="Book ISBN" />
+
+    <EditText
+        android:id="@+id/field_book_author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/field_title"
@@ -25,10 +50,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="5dp"
-        android:hint="Write your post..."
-        android:inputType="textMultiLine"
-        android:maxLines="10"
-        android:scrollHorizontally="false" />
+        android:hint="Last Name, First Name" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_submit_post"
@@ -39,24 +61,6 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_navigation_check_24"/>
 
-    <EditText
-        android:id="@+id/field_isbn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/field_body"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="isbn" />
 
-    <EditText
-        android:id="@+id/field_book_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/field_isbn"
-        android:layout_alignStart="@+id/field_isbn"
-        android:layout_below="@+id/field_isbn"
-        android:layout_marginTop="23dp"
-        android:ems="10"
-        android:hint="Name" />
 
 </RelativeLayout>
